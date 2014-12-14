@@ -496,6 +496,9 @@
   		success: function(gameScore) {
    			 // The object was retrieved successfully.
    			 console.log("success");
+   			 var score = gameScore.get("foo");
+   			 console.log(score);
+
  		 },
 		error: function(object, error) {
 		    // The object was not retrieved successfully.
@@ -504,7 +507,25 @@
   		}
 	});
 	
+	//adding a new object to dataset
 	
+	var GameScore = Parse.Object.extend("TestObject");
+	var gameScore = new GameScore();
+ 
+	gameScore.set("foo", "Sohaibtest" );
+
+ 
+	gameScore.save(null, {
+  		success: function(gameScore) {
+    	// Execute any logic that should take place after the object is saved.
+    	alert('New object created with objectId: ' + gameScore.id);
+  		},
+  		error: function(gameScore, error) {
+  	    // Execute any logic that should take place if the save fails.
+    	// error is a Parse.Error with an error code and message.
+   		alert('Failed to create new object, with error code: ' + error.message);
+  		}
+	});
 	//function will be used to create the table in the HTML
 	function create() {
                 var row = 4;
