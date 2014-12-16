@@ -509,11 +509,18 @@
 	
 	//adding a new object to dataset
 	
-	var GameScore = Parse.Object.extend("TestObject");
-	var gameScore = new GameScore();
+	var User = Parse.Object.extend("User");
+	console.log("test1");
+	var gameScore = new User();
  
-	gameScore.set("foo", "Sohaibtest" );
-
+ 	console.log("test2");
+ 	//var testUser = "Sohaib";
+	gameScore.set("username", "sohaib" );
+	
+	gameScore.set("password", "testing");
+	
+	gameScore.set("email", "sohaib.mushtaq1@gmail.com");
+	
  
 	gameScore.save(null, {
   		success: function(gameScore) {
