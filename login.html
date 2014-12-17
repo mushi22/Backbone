@@ -38,9 +38,12 @@
 		      <form class="form-login">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
+					<span style="color:red;" id="error" > </span>
 		            <input type="text" class="form-control" placeholder="User ID" name="user" id="user" autofocus>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password" name="passwd" id="passwd" >
+		            		            <hr>
+
 		        	<button id="submit" class="btn btn-theme btn-block"><i class="fa fa-lock"></i> SIGN IN</button> 
 		            <!--<label class="checkbox">
 		                <span class="pull-right">
@@ -51,7 +54,6 @@
 		            
 		          <!--  <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button> -->
 
-		            <hr>
 		            
 		          <!--  <div class="login-social-link centered">
 		            <p>or you can sign in via your social network</p>
@@ -183,6 +185,7 @@
 					error: function(user, error) {
 						// The login failed. Check error to see why.
 						console.log("failed");
+   						document.getElementById("error").innerHTML="Username or Password is Invalid";
 					 }
 				});
 
