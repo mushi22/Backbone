@@ -167,12 +167,32 @@
   			}
 		}); */
 		
+	/*	console.log("getting id's");
+		var username = document.getElementById("user").value;
+		var password = document.getElementById("passwd").value;
 
+		console.log("printing id's");	
+		console.log(username);
+		console.log(password);
+		
+		console.log("parsing i'd's");
+			
+		Parse.User.logIn(username, password, {
+  				success: function(user) {
+    			// Do stuff after successful login.
+    			console.log("success");
+    				   window.location="index.html";
+  				},
+  				error: function(user, error) {
+   			    // The login failed. Check error to see why.
+   			    console.log("failed");
+ 				 }
+			});
+			*/
 		function Calculate(){
 			
 			console.log("In function, test 1");
 			
-			console.log("hhahahahah");
 			
 			var username = document.getElementById("user").value;
 			var password = document.getElementById("passwd").value;
@@ -181,21 +201,24 @@
 			console.log(username);
 			console.log(password);
 			
-			
-			
-			alert ("Login successfully");
-				window.location.replace("index.html");
-				//window.location = "index.html"; // Redirecting to other page.
-				return false; 
-				
-			Parse.User.logIn("myname", "mypass", {
+			Parse.User.logIn("sohaib", "test", {
   				success: function(user) {
     			// Do stuff after successful login.
+    			console.log("success");
   				},
   				error: function(user, error) {
    			    // The login failed. Check error to see why.
+   			    console.log("failed");
  				 }
 			});
+			
+				//alert ("Login successfully");
+		//		window.location.replace("index.html");
+				//window.location = "index.html"; // Redirecting to other page.
+				//return false; 
+				
+			
+			
 		}
 	/**		console.log("hhahahahah");
 			alert ("Login successfully");
