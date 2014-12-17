@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>Instrument Works </title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -34,19 +34,23 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="index.html">
+		      <!--<form class="form-login" action="" id="commentForm" onsubmit="return validateForm(this)"> -->
+		      <form class="form-login">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="User ID" name="user" autofocus>
+		            <input type="text" class="form-control" placeholder="User ID" name="user" id="user" autofocus>
 		            <br>
-		            <input type="password" class="form-control" placeholder="Password" name="passwd" >
-		            <label class="checkbox">
+		            <input type="password" class="form-control" placeholder="Password" name="passwd" id="passwd" >
+		            <button class="btn btn-theme btn-block" Value="Submit" type="submit" onclick="Calculate()"><i class="fa fa-lock"></i> SIGN IN</button> 
+		            <!--<label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
 		
 		                </span>
-		            </label>
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+		            </label> -->
+		            
+		          <!--  <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button> -->
+
 		            <hr>
 		            
 		          <!--  <div class="login-social-link centered">
@@ -54,18 +58,22 @@
 		                <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
 		                <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
 		            </div> -->
-		            <div class="registration">
+		            
+		            
+		           <!-- Create account, disabled this for now -->
+		           <!-- <div class="registration">
 		                Don't have an account yet?<br/>
 		                 <span class="pull-center">
 		                    <a data-toggle="modal" href="login.html#createacct"> Create Account</a>
 		
 		                </span>
-		            </div>
+		            </div> -->
+		            <!-- End Create Account -->
 		
 		        </div>
 		
 		          <!-- Modal -->
-		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		         <!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
 		              <div class="modal-dialog">
 		                  <div class="modal-content">
 		                      <div class="modal-header">
@@ -83,13 +91,14 @@
 		                      </div>
 		                  </div>
 		              </div>
-		          </div>
+		          </div> -->
 		          <!-- modal -->
 		          
 		          <!--- Create Accont --> 
-		            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="createacct" class="modal fade">
+		          <!--  <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="createacct" class="modal fade">
 		              <div class="modal-dialog">
 		                  <div class="modal-content">
+		                  <form>
 		                      <div class="modal-header">
 		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		                          <h4 class="modal-title">Create Account</h4>
@@ -114,8 +123,10 @@
 		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
 		                          <button class="btn btn-theme" type="button">Submit</button>
 		                      </div>
+		                  </form>    
 		              </div>
 		          </div>
+		          </div> -->
 		
 		      </form>	  	
 	  	
@@ -125,18 +136,121 @@
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.3.2.min.js"></script>
+
+
 
     <!--BACKSTRETCH-->
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
-    <script>
+    <script type="text/javascript">
+    
+    
         $.backstretch("assets/img/login-bg.jpg", {speed: 500});
         
+		Parse.initialize("vBbvihMsKuxIfMc999TtrwCHAKxRW2PMarjtRVBn", "Y53eTAGBxDeiWNDFOwomUhDFjlEnh2qEiAiY9GOi");	
 
-		var x = document.getElementById("user").value;
+		console.log("sdsa");
+	/*	var user = new Parse.User();
+		user.set("username", "sohaib");
+		user.set("password", "test");
+		user.set("email", "sohaib.mushtaq1@gmail.com");
 
+		
+		user.signUp(null, {
+ 			 success: function(user) {
+   			 // Hooray! Let them use the app now.
+ 			},
+ 			 error: function(user, error) {
+    		// Show the error message somewhere and let the user try again.
+    		alert("Error: " + error.code + " " + error.message);
+  			}
+		}); */
+		
+
+		function Calculate(){
+			
+			console.log("In function, test 1");
+			
+			console.log("hhahahahah");
+			
+			var username = document.getElementById("user").value;
+			var password = document.getElementById("passwd").value;
+
+			
+			console.log(username);
+			console.log(password);
+			
+			
+			
+			alert ("Login successfully");
+				window.location.replace("index.html");
+				//window.location = "index.html"; // Redirecting to other page.
+				return false; 
+				
+			Parse.User.logIn("myname", "mypass", {
+  				success: function(user) {
+    			// Do stuff after successful login.
+  				},
+  				error: function(user, error) {
+   			    // The login failed. Check error to see why.
+ 				 }
+			});
+		}
+	/**		console.log("hhahahahah");
+			alert ("Login successfully");
+				window.location = "index.html"; // Redirecting to other page.
+				return false; */
+		
+		
+	    function validateForm(form){
+	    	var x  = 1;
+	
+			if (x == 1){
+				console.log("success");
+				return true;
+			}else{
+				console.log("fail");
+				return false;
+			}
+	    
+	    }
+
+		
+
+		function validate(){
+			console.log("test1");
+			var username = document.getElementById("user").value;
+			var password = document.getElementById("passwd").value;
+			
+			
+			
+			console.log("test2");
+			
+			
+			
+			
+			Parse.User.logIn(username, password, {
+				success: function(user) {
+    			// Do stuff after successful login.
+    			console.log("error");
+  				},
+  					error: function(user, error) {
+   					// The login failed. Check error to see why.
+   					console.log("fialifnjds");
+ 			 	}
+			});
+			console.log("test3");
+			
+		/*	if ( username == "Formget" && password == "formget#123"){
+				alert ("Login successfully");
+				window.location = "index.html"; // Redirecting to other page.
+				return false;
+			} else{
+				console.log("error n00b");
+			} */
+		}							
     	
-    	console.log(x);
         
     </script>
 
