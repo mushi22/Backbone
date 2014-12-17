@@ -41,7 +41,7 @@
 		            <input type="text" class="form-control" placeholder="User ID" name="user" id="user" autofocus>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password" name="passwd" id="passwd" >
-		            <button class="btn btn-theme btn-block" Value="Submit" type="submit" onclick="Calculate()"><i class="fa fa-lock"></i> SIGN IN</button> 
+		        	<button id="submit" class="btn btn-theme btn-block"><i class="fa fa-lock"></i> SIGN IN</button> 
 		            <!--<label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
@@ -146,133 +146,57 @@
     <script type="text/javascript">
     
     
-        $.backstretch("assets/img/login-bg.jpg", {speed: 500});
-        
-		Parse.initialize("vBbvihMsKuxIfMc999TtrwCHAKxRW2PMarjtRVBn", "Y53eTAGBxDeiWNDFOwomUhDFjlEnh2qEiAiY9GOi");	
-
-		console.log("sdsa");
-	/*	var user = new Parse.User();
-		user.set("username", "sohaib");
-		user.set("password", "test");
-		user.set("email", "sohaib.mushtaq1@gmail.com");
-
+       $(document).ready(function() {
+    		console.log('in ready');
+			$.backstretch("assets/img/login-bg.jpg", {speed: 500});
 		
-		user.signUp(null, {
- 			 success: function(user) {
-   			 // Hooray! Let them use the app now.
- 			},
- 			 error: function(user, error) {
-    		// Show the error message somewhere and let the user try again.
-    		alert("Error: " + error.code + " " + error.message);
-  			}
-		}); */
-		
-	/*	console.log("getting id's");
-		var username = document.getElementById("user").value;
-		var password = document.getElementById("passwd").value;
+			Parse.initialize("vBbvihMsKuxIfMc999TtrwCHAKxRW2PMarjtRVBn", "Y53eTAGBxDeiWNDFOwomUhDFjlEnh2qEiAiY9GOi");	
 
-		console.log("printing id's");	
-		console.log(username);
-		console.log(password);
+			console.log("sdsa");
 		
-		console.log("parsing i'd's");
+			//function calculate(){
+			$('#submit').click(function(event){
+				console.log("something");
+				event.preventDefault();
+				console.log("In function, test 1");
 			
-		Parse.User.logIn(username, password, {
-  				success: function(user) {
-    			// Do stuff after successful login.
-    			console.log("success");
-    				   window.location="index.html";
-  				},
-  				error: function(user, error) {
-   			    // The login failed. Check error to see why.
-   			    console.log("failed");
- 				 }
+			
+				var username = document.getElementById("user").value;
+				var password = document.getElementById("passwd").value;
+
+			
+				console.log(username);
+				console.log(password);
+			
+				//console.log("function called");
+				//login(username, password);
+			
+				//alert ("balsafdjfs successfully");
+			
+				console.log("sfds");
+				Parse.User.logIn(username, password, {
+					success: function(user) {
+						// Do stuff after successful login.
+						console.log("success");
+						window.location.replace("index.html");
+					},
+					error: function(user, error) {
+						// The login failed. Check error to see why.
+						console.log("failed");
+					 }
+				});
+
 			});
-			*/
-		function Calculate(){
-			
-			console.log("In function, test 1");
-			
-			
-			var username = document.getElementById("user").value;
-			var password = document.getElementById("passwd").value;
-
-			
-			console.log(username);
-			console.log(password);
-			
-			Parse.User.logIn("sohaib", "test", {
-  				success: function(user) {
-    			// Do stuff after successful login.
-    			console.log("success");
-  				},
-  				error: function(user, error) {
-   			    // The login failed. Check error to see why.
-   			    console.log("failed");
- 				 }
-			});
-			
-				//alert ("Login successfully");
-		//		window.location.replace("index.html");
-				//window.location = "index.html"; // Redirecting to other page.
-				//return false; 
-				
-			
-			
-		}
-	/**		console.log("hhahahahah");
-			alert ("Login successfully");
-				window.location = "index.html"; // Redirecting to other page.
-				return false; */
-		
-		
-	    function validateForm(form){
-	    	var x  = 1;
-	
-			if (x == 1){
-				console.log("success");
-				return true;
-			}else{
-				console.log("fail");
-				return false;
-			}
-	    
-	    }
-
+		});
 		
 
-		function validate(){
-			console.log("test1");
-			var username = document.getElementById("user").value;
-			var password = document.getElementById("passwd").value;
 			
-			
-			
-			console.log("test2");
-			
-			
-			
-			
-			Parse.User.logIn(username, password, {
-				success: function(user) {
-    			// Do stuff after successful login.
-    			console.log("error");
-  				},
-  					error: function(user, error) {
-   					// The login failed. Check error to see why.
-   					console.log("fialifnjds");
- 			 	}
-			});
-			console.log("test3");
-			
-		/*	if ( username == "Formget" && password == "formget#123"){
-				alert ("Login successfully");
-				window.location = "index.html"; // Redirecting to other page.
-				return false;
-			} else{
-				console.log("error n00b");
-			} */
-		}							
+
+		
+		
+
+		
+						
     	
         
     </script>
