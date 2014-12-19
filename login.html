@@ -38,12 +38,12 @@
 	  	
 		      <!--<form class="form-login" action="" id="commentForm" onsubmit="return validateForm(this)"> -->
 		      <form class="form-login">
-		        <h2 class="form-login-heading">sign in now</h2>
+		       <h2 class="form-login-heading"><img src="assets/img/instrument-works.png"></h2>
 		        <div class="login-wrap">
 					<span style="color:red;" id="error" > </span>
-		            <input type="text" class="form-control" placeholder="User ID" name="user" id="user" autofocus>
+		            <input type="text" class="form-control" placeholder="username" name="user" id="user" autofocus>
 		            <br>
-		            <input type="password" class="form-control" placeholder="Password" name="passwd" id="passwd" >
+		            <input type="password" class="form-control" placeholder="password" name="passwd" id="passwd" >
 		            		            <hr>
 
 		        	<button id="submit" class="btn btn-theme btn-block"><i class="fa fa-lock"></i> SIGN IN</button> 
@@ -152,7 +152,7 @@
     
        $(document).ready(function() {
     		console.log('in ready');
-			$.backstretch("assets/img/login-bg.jpg", {speed: 500});
+			$.backstretch("assets/img/login-bg.jpeg", {speed: 500});
 		
 			Parse.initialize("vBbvihMsKuxIfMc999TtrwCHAKxRW2PMarjtRVBn", "Y53eTAGBxDeiWNDFOwomUhDFjlEnh2qEiAiY9GOi");	
 
