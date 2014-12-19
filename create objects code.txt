@@ -1,0 +1,119 @@
+var GameScore = Parse.Object.extend("Dataset2");
+									var gameScore = new GameScore();
+ 
+									gameScore.set("datasetName", "Dataset1");
+									gameScore.set("datasetNotes", "Data Set 1 notes");
+									gameScore.set("datasetOwner", "Sohaib");
+ 
+									gameScore.save(null, {
+									  success: function(gameScore) {
+									  	console.log("data set 1 created");
+										// Execute any logic that should take place after the object is saved.
+										//alert('New object created with objectId: ' + gameScore.id);
+									  },
+									  error: function(gameScore, error) {
+										// Execute any logic that should take place if the save fails.
+										// error is a Parse.Error with an error code and message.
+										//alert('Failed to create new object, with error code: ' + error.message);
+									  }
+									});
+									
+									var GameScore = Parse.Object.extend("Dataset2");
+									var gameScore = new GameScore();
+ 
+									gameScore.set("datasetName", "Dataset2");
+									gameScore.set("datasetNotes", "Data Set 2 notes");
+									gameScore.set("datasetOwner", "Sohaib");
+ 
+									gameScore.save(null, {
+									  success: function(gameScore) {
+									  	console.log("data set 2 created");
+										// Execute any logic that should take place after the object is saved.
+										//alert('New object created with objectId: ' + gameScore.id);
+									  },
+									  error: function(gameScore, error) {
+										// Execute any logic that should take place if the save fails.
+										// error is a Parse.Error with an error code and message.
+										//alert('Failed to create new object, with error code: ' + error.message);
+									  }
+									});
+					    	   		
+					    	   		var GameScore = Parse.Object.extend("Dataset2");
+									var gameScore = new GameScore();
+ 
+									gameScore.set("datasetName", "Dataset3");
+									gameScore.set("datasetNotes", "Data Set 3 notes");
+									gameScore.set("datasetOwner", "Sohaib");
+ 
+									gameScore.save(null, {
+									  success: function(gameScore) {
+									  	console.log("data set 3 created");
+										// Execute any logic that should take place after the object is saved.
+										//alert('New object created with objectId: ' + gameScore.id);
+									  },
+									  error: function(gameScore, error) {
+										// Execute any logic that should take place if the save fails.
+										// error is a Parse.Error with an error code and message.
+										//alert('Failed to create new object, with error code: ' + error.message);
+									  }
+									});
+					    	   		
+					    	   		var GameScore = Parse.Object.extend("Dataset2");
+									var gameScore = new GameScore();
+ 
+									gameScore.set("datasetName", "Dataset4");
+									gameScore.set("datasetNotes", "Data Set 4 notes");
+									gameScore.set("datasetOwner", "Sohaib");
+ 
+									gameScore.save(null, {
+									  success: function(gameScore) {
+									  	console.log("data set 4 created");
+										// Execute any logic that should take place after the object is saved.
+										//alert('New object created with objectId: ' + gameScore.id);
+									  },
+									  error: function(gameScore, error) {
+										// Execute any logic that should take place if the save fails.
+										// error is a Parse.Error with an error code and message.
+										//alert('Failed to create new object, with error code: ' + error.message);
+									  }
+									});
+					    	   		
+					    	   		var GameScore = Parse.Object.extend("Dataset2");
+									var gameScore = new GameScore();
+ 
+									gameScore.set("datasetName", "Dataset5");
+									gameScore.set("datasetNotes", "Data Set 5 notes");
+									gameScore.set("datasetOwner", "Sohaib");
+ 
+									gameScore.save(null, {
+									  success: function(gameScore) {
+									  	console.log("data set 5 created");
+										// Execute any logic that should take place after the object is saved.
+										//alert('New object created with objectId: ' + gameScore.id);
+									  },
+									  error: function(gameScore, error) {
+										// Execute any logic that should take place if the save fails.
+										// error is a Parse.Error with an error code and message.
+										//alert('Failed to create new object, with error code: ' + error.message);
+									  }
+									});
+									
+									var GameScore = Parse.Object.extend("Dataset2");
+									var gameScore = new GameScore();
+ 
+									gameScore.set("datasetName", "Dataset6");
+									gameScore.set("datasetNotes", "Data Set 6 notes");
+									gameScore.set("datasetOwner", "Sohaib");
+ 
+									gameScore.save(null, {
+									  success: function(gameScore) {
+									  	console.log("data set 6 created");
+										// Execute any logic that should take place after the object is saved.
+										//alert('New object created with objectId: ' + gameScore.id);
+									  },
+									  error: function(gameScore, error) {
+										// Execute any logic that should take place if the save fails.
+										// error is a Parse.Error with an error code and message.
+										//alert('Failed to create new object, with error code: ' + error.message);
+									  }
+									});

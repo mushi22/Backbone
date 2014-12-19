@@ -154,9 +154,55 @@
 
     <!--script for this page-->
     <script src="assets/js/sparkline-chart.js"></script>    
-	<script src="assets/js/zabuto_calendar.js"></script>	
+	<script src="assets/js/zabuto_calendar.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.3.2.min.js"></script>
 	
 	
+	
+	
+	<script>
+		
+		Parse.initialize("vBbvihMsKuxIfMc999TtrwCHAKxRW2PMarjtRVBn", "Y53eTAGBxDeiWNDFOwomUhDFjlEnh2qEiAiY9GOi");	
+
+
+		Parse.User.logIn("sohaib", "test", {
+					success: function(user) {
+						// Do stuff after successful login.
+						console.log("success");
+						//window.location.replace("index.html");
+					},
+					error: function(user, error) {
+						// The login failed. Check error to see why.
+						console.log("failed");
+					 }
+				});
+				
+		var GameScore = Parse.Object.extend("GameScore");
+		var query = new Parse.Query(GameScore);
+		query.equalTo("playerEmail", "dstemkoski@example.com");
+		query.first({
+  			success: function(object) {
+    		// Successfully retrieved the object.
+  		},
+  		error: function(error) {
+    		alert("Error: " + error.code + " " + error.message);
+  		}
+		});
+		//var GameScore = Parse.Object.extend("Dataset");
+		//var query = new Parse.Query("Dataset");
+		
+	/*	query.equalTo("datasetOwner", "hNL6bpR9vZ");
+		console.log("test1");
+		query.first({
+		  success: function(object) {
+			// Successfully retrieved the object.
+			console.log("found sometihng");
+		  },
+		  error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+		  }
+		});*/
+	</script>
 	
 	<script type="application/javascript">
         $(document).ready(function () {

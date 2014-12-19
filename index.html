@@ -22,6 +22,8 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
+        <script src="http://www.parsecdn.com/js/parse-1.3.2.min.js"></script>
+
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -208,10 +210,11 @@
               	  	
                   <li class="mt">
                       <a class="active" href="index.html">
-                          <i class="fa fa-dashboard"></i>
+                          <i class="fa fa-dashboard" ></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
+                  
 
                  <!-- <li class="sub-menu">
                       <a href="javascript:;" >
@@ -264,7 +267,7 @@
                           <span>Data Tables</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.html">DataSet1</a></li>
+                          <li><a  href="basic_table2.html">DataSet1</a></li>
                           <li><a  href="responsive_table.html">Responsive Table</a></li>
                       </ul>
                   </li>
@@ -299,7 +302,204 @@
 						
 						<center><h3> Main Page </h3><center>
                       
-					</div><!-- /row -->	  
+					</div><!-- /row -->	 
+					<div class="row mt">
+						<center><h3> Test </h3><center>
+					    <span id="error" > </span>
+					    
+					    
+					    <div id="output"></div>
+					    
+					    <table style="width:80%">
+					    
+					    	<tr>
+								<td >DataSetName</td>
+								<td ></td> 
+								<td ></td>
+							</tr>
+							<tr>
+								<td id="dataset1"></td>
+								<td id="dataset2"></td> 
+								<td id="dataset3"></td>
+							</tr>
+							<tr>
+								<td id="dataset4"></td>
+								<td id="dataset5"></td> 
+								<td id="dataset6"></td>
+							</tr>
+							<tr>
+								<td >DataSetName</td>
+								<td ></td> 
+								<td ></td>
+							</tr>
+							<tr>
+								<td >DataSetName</td>
+								<td ></td> 
+								<td ></td>
+							</tr>
+							<tr>
+								<td >DataSetName</td>
+								<td ></td> 
+								<td ></td>
+							</tr>
+							<tr>
+								<td >DataSetName</td>
+								<td ></td> 
+								<td ></td>
+							</tr>
+							
+							<tr>
+								<td >DataSetName</td>
+								<td ></td> 
+								<td ></td>
+							</tr>
+							<tr>
+								<td id="firstfirst"></td>
+								<td id="firstseocnd"></td> 
+								<td id="firstthird"></td>
+							</tr>
+							<tr>
+								<td id="secondfirst"></td>
+							</tr>
+							<tr>
+								<td id="thirdfirst"></td>
+							</tr>
+							<tr>
+								<td id="fourthfirst"></td>
+							</tr>
+							<tr>
+								<td id="fifthfirst"></td>
+							</tr>
+							<tr>
+								<td id="sixthfirst"></td>
+							</tr>
+							
+						</table>
+					    
+					    <script type="text/javascript">
+					    			Parse.initialize("vBbvihMsKuxIfMc999TtrwCHAKxRW2PMarjtRVBn", "Y53eTAGBxDeiWNDFOwomUhDFjlEnh2qEiAiY9GOi");	
+
+					    	   	//	document.getElementById("firstfirst").innerHTML="trfd";
+					    	   		
+					    	   		
+					    	   		var GameScore = Parse.Object.extend("Dataset2");
+									var query = new Parse.Query(GameScore);
+									query.equalTo("datasetOwner", "Sohaib");
+									query.find({
+									  success: function(results) {
+										alert("Successfully retrieved " + results.length + " scores.");
+										// Do something with the returned Parse.Object values
+										for (var i = 0; i < results.length; i++) { 
+										  var object = results[i];
+										 
+										 // console.log(object+i);
+										  console.log(object.id + ' - ' + object.get('datasetOwner'));
+										
+					                    // var logger = document.getElementById('log');
+
+										  var logger = object.id + ' - ' + object.get('datasetOwner');
+										   document.getElementById('output').innerHTML = logger;									}
+									  },
+									  error: function(error) {
+										alert("Error: " + error.code + " " + error.message);
+									  }
+									});
+					    	   		
+					    	   		var GameScore = Parse.Object.extend("Dataset");
+									var query = new Parse.Query(GameScore);
+									query.include("datasetOwner");
+
+									query.get("OOCKv5Firo", {
+									  success: function(gameScore) {
+										// The object was retrieved successfully.
+										var score = gameScore.get("datasetName");
+										var owner = gameScore.fetch("datasetOwner");
+										document.getElementById("firstfirst").innerHTML=score;
+										document.getElementById("firstseocnd").innerHTML = owner;
+					    	   		
+									  },
+									  error: function(object, error) {
+										// The object was not retrieved successfully.
+										// error is a Parse.Error with an error code and message.
+									  }
+									});
+									
+									var query = new Parse.Query(GameScore);
+									query.get("h9UocyM6zO", {
+									  success: function(gameScore) {
+										// The object was retrieved successfully.
+										var score = gameScore.get("datasetName");
+										document.getElementById("secondfirst").innerHTML=score;
+					    	   		
+									  },
+									  error: function(object, error) {
+										// The object was not retrieved successfully.
+										// error is a Parse.Error with an error code and message.
+									  }
+									});
+									
+									var query = new Parse.Query(GameScore);
+									query.get("Xg0UvhnImz", {
+									  success: function(gameScore) {
+										// The object was retrieved successfully.
+										var score = gameScore.get("datasetName");
+										document.getElementById("thirdfirst").innerHTML=score;
+					    	   		
+									  },
+									  error: function(object, error) {
+										// The object was not retrieved successfully.
+										// error is a Parse.Error with an error code and message.
+									  }
+									});
+									
+									var query = new Parse.Query(GameScore);
+									query.get("3KxYIDZ9aq", {
+									  success: function(gameScore) {
+										// The object was retrieved successfully.
+										var score = gameScore.get("datasetName");
+										document.getElementById("fourthfirst").innerHTML=score;
+					    	   		
+									  },
+									  error: function(object, error) {
+										// The object was not retrieved successfully.
+										// error is a Parse.Error with an error code and message.
+									  }
+									});
+									
+									var query = new Parse.Query(GameScore);
+									query.get("HjBF3TItOP", {
+									  success: function(gameScore) {
+										// The object was retrieved successfully.
+										var score = gameScore.get("datasetName");
+										document.getElementById("fifthfirst").innerHTML=score;
+					    	   		
+									  },
+									  error: function(object, error) {
+										// The object was not retrieved successfully.
+										// error is a Parse.Error with an error code and message.
+									  }
+									});
+									
+									var query = new Parse.Query(GameScore);
+									query.get("t6goh21QEJ", {
+									  success: function(gameScore) {
+										// The object was retrieved successfully.
+										var score = gameScore.get("datasetName");
+										document.getElementById("sixthfirst").innerHTML= score;
+					    	   		
+									  },
+									  error: function(object, error) {
+										// The object was not retrieved successfully.
+										// error is a Parse.Error with an error code and message.
+									  }
+									});
+								
+								
+					    </script>
+
+
+					
+					</div>
 
 					
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
